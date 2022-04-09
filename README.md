@@ -364,4 +364,100 @@ Membuat HTML DOM dengan javascript dan script di dalam html danjuga checkbox
 </html>
 ```
 
-##
+## 1) Pertanyaa dan  tugas buat validasi from
+
+![validasi](img/hasil_validasi%20(2).png)
+
+harus mengisi semua data baru terkirim jika tidak tidak akan terpanggil
+
+![hasil_validasi](img/validasi.png)
+
+seperti contoh gambar di atas
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form Validasi</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript">
+        function validasiForm() {
+            var nama = document.getElementById("nama").value;
+            var email = document.getElementById("email").value;
+            var alamat = document.getElementById("alamat").value;
+            if (nama != "" && email != "" && alamat != "") {
+                return true;
+            } else {
+                alert('Isi Alamat Anda dengan lengkap !');
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+     <div class="login">
+        <form action="#" method="POST" onSubmit="return validasiForm()">
+            <div>
+                <label>Nama Lengkap:</label>
+                <input type="text" name="nama" id="nama" />
+            </div>
+            <div>
+                <label>Email:</label>
+                <input type="email" name="email" id="email" />
+            </div>
+            <div>
+                <label>Alamat:</label>
+                <textarea cols="40" rows="5" name="alamat" id="alamat"></textarea>
+            </div>
+            <div>
+                <input type="submit" value="Daftar" class="tombol">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+```
+
+```css
+body {
+    background: #5f828d;
+    font-family: sans-serif;
+    padding: 100px;
+  }
+  
+
+  .login {
+    padding: 1em;
+    margin: 2em auto;
+    width: 30em;
+    background: #fff;
+    border-radius: 3px;
+  }
+  
+  label {
+    font-size: 10pt;
+    color: #555;
+  } 
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    padding: 8px;
+    width: 95%;
+    background: #efefef;
+    border: 0;
+    font-size: 10pt;
+    margin: 6px 0px; 
+  }
+   
+  .tombol {
+    background: #3498db;
+    color: #fff;
+    border: 0;
+    padding: 5px 8px;
+  } 
+   .tombol:hover{
+      background-color: #555;
+  }
+```
